@@ -5,10 +5,10 @@ using UnityEngine;
 /// <summary>
 /// UI窗体父类
 /// 定义窗体的四个生命周期
-/// 1. Enter 显示状态
-/// 2. Pause 暂停状态
-/// 3. Resume 继续状态
-/// 4. End 退出状态
+/// 1. Display 显示状态
+/// 2. Hiding 隐藏状态
+/// 3. ReDisplay 再显示状态
+/// 4. Freeze 冻结状态
 /// </summary>
 
 namespace UIFrame
@@ -21,23 +21,24 @@ namespace UIFrame
 
         // 定义UI窗体类型的公共属性
         public UIType CurrentUIType { get => _CurrentUIType; set => _CurrentUIType = value; }
-
-        public virtual void Enter()
+        
+        // 定义四个虚方法，设置窗体的四个状态
+        public virtual void Display()
         {
             this.gameObject.SetActive(true);
         }
 
-        public virtual void Pause()
+        public virtual void Hiding()
         {
             this.gameObject.SetActive(false);
         }
 
-        public virtual void Resume()
+        public virtual void ReDisplay()
         {
             this.gameObject.SetActive(true);
         }
 
-        public virtual void End()
+        public virtual void Freeze()
         {
             this.gameObject.SetActive(true);
         }

@@ -15,10 +15,11 @@ namespace UIFrame
     /// </summary>
     public class UIManager : MonoBehaviour
     {
-        // 定义字段
+        // 定义一个单例模式的私有字段，创建实例变量
         private static UIManager _Instance = null;
 
-        // UI窗体预设路径（参数1：窗体预设名称， 2:窗体预设路径 ）
+
+        // 定义UI窗体预设路径（参数1：窗体预设名称， 2:窗体预设路径 ）
         private Dictionary<string, string> _DicFormsPaths;
 
         // 缓存所有UI窗体
@@ -27,7 +28,8 @@ namespace UIFrame
         // 当前显示的UI窗体
         private Dictionary<string, BaseUIForm> _DicCurrentShowUIForms;
 
-        // UI根节点
+
+        // 定义UI根节点
         private Transform _TraCanvasTransfrom = null;
 
         // 全屏幕显示的节点
