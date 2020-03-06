@@ -57,7 +57,30 @@ namespace UIFrame
 
         public void Awake()
         {
+            // 字段初始化
+            _DicAllUIForms = new Dictionary<string, BaseUIForm>();
+            _DicCurrentShowUIForms = new Dictionary<string, BaseUIForm>();
+            _DicFormsPaths = new Dictionary<string, string>();
+
+            // 初始化加载根UI窗体Canvas预设
+            InitRootCanvasloading();
+
+            // 得到UI节点、全屏节点、固定节点、弹出节点
+
+            // 把本脚本做为“根UI窗体”的子节点
+
+            // “根UI窗体”在场景转换时不允许销毁
+
+            // 初始化UI“窗体预设”路径数据
             
+
+        }
+
+        // 初始化加载根UI窗体Canvas预设
+        private void InitRootCanvasloading()
+        {
+            // Resources.Load("Canvas"); unity自带的Resource类效率太低，把缓存加进去封装一下
+            ResourcesMgr.GetInstance().LoadAsset("Canvas", false);
         }
 
 
