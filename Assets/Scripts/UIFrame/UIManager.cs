@@ -105,8 +105,8 @@ namespace UIFrame
 
             // 根据定义好的显示模式加载不同的UI窗体
             Debug.Log(baseUIForms);
-
             Debug.Log(baseUIForms.CurrentUIType.UIForms_ShowMode);
+
             switch (baseUIForms.CurrentUIType.UIForms_ShowMode)
             {
                 case UIFormShowMode.Normal:          // 普通显示窗口模式

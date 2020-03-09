@@ -1,0 +1,66 @@
+Log >> 2020/3/9 11:38:32
+Log begin.
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+WLog:Awake() (at Assets\Scripts\Lib\WLog.cs:27)
+
+Log >> 2020/3/9 11:38:33
+LogonUIForm(Clone) (DemoProject.LogonUIForm)
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UIFrame.UIManager:ShowUIForms(String) (at Assets\Scripts\UIFrame\UIManager.cs:107)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/9 11:38:33
+Normal
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UIFrame.UIManager:ShowUIForms(String) (at Assets\Scripts\UIFrame\UIManager.cs:108)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/9 11:38:33
+登陆窗体 LogonUIForm 加载已完成！
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:14)
+
+Log >> 2020/3/9 11:38:38
+D:\funtime\demo\UIFramework\Log
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UnityEngine.MonoBehaviour:print(Object)
+WLog:SaveLog() (at Assets\Scripts\Lib\WLog.cs:80)
+WLog:OnApplicationQuit() (at Assets\Scripts\Lib\WLog.cs:72)
+
+Log >> 2020/3/9 11:38:38
+path: D:\funtime\demo\UIFramework\Log\[Log] 2020-3-9  11-38-32.txt
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+WLog:SaveLog() (at Assets\Scripts\Lib\WLog.cs:86)
+WLog:OnApplicationQuit() (at Assets\Scripts\Lib\WLog.cs:72)
+
