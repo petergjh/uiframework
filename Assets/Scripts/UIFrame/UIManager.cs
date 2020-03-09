@@ -149,7 +149,7 @@ namespace UIFrame
 
             BaseUIForm baseUIForm;
             // 所有UI窗体集合中，若没有记录则直接返回
-            _DicAllUIForms.TryGetValue(uiFormName, out baseUIForm)
+            _DicAllUIForms.TryGetValue(uiFormName, out baseUIForm);
                 if (baseUIForm == null) return;
 
             // 根据窗体不同的显示类型，分别按不同的方法关闭
