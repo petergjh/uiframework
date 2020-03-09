@@ -11,7 +11,7 @@ namespace DemoProject
         {
             // 加载登陆窗体
             UIManager.GetInstance().ShowUIForms("LogonUIForm");
-            print("登陆窗体 LogonUIForm 加载已完成！");
+            Debug.Log("登陆窗体 LogonUIForm 加载已完成！");
 
         }
     }
