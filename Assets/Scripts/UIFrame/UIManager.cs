@@ -80,7 +80,7 @@ namespace UIFrame
             Debug.Log("5. “根UI窗体”在场景转换时不允许销毁");
             DontDestroyOnLoad(_TraCanvasTransfrom);
 
-            Debug.Log("6. 提取UI“窗体预设”路径: UIPrefabs/LogonUIForm\n Awake初始化完成");
+            Debug.Log("6. 提取UI“窗体预设”路径(此处需重构做成json配置文件)\n Awake初始化完成");
             //先写简单的，后面再用json做配置文件
             if(_DicFormsPaths!=null)
             {
