@@ -85,6 +85,7 @@ namespace UIFrame
             if(_DicFormsPaths!=null)
             {
                 _DicFormsPaths.Add("LogonUIForm", @"UIPrefabs\LogonUIForm");
+                _DicFormsPaths.Add("SelectHeroUIForm", @"UIPrefabs\SelectHeroUIForm");
             }
             
         }

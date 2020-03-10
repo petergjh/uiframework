@@ -1,0 +1,264 @@
+Log >> 2020/3/10 12:05:38
+Log begin.
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+WLog:Awake() (at Assets\Scripts\Lib\WLog.cs:27)
+
+Log >> 2020/3/10 12:05:38
+开始执行Awake方法，设置核心数据默认值:路径、所有窗体、正在显示的窗体，并提取“UI窗体路径”到集合中
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UIFrame.UIManager:Awake() (at Assets\Scripts\UIFrame\UIManager.cs:58)
+UnityEngine.GameObject:Internal_AddComponentWithType(Type)
+UnityEngine.GameObject:AddComponent(Type) (at D:\unity\Runtime\Export\GameObject.bindings.cs:221)
+UnityEngine.GameObject:AddComponent() (at D:\unity\Runtime\Export\GameObject.bindings.cs:226)
+UIFrame.UIManager:GetInstance() (at Assets\Scripts\UIFrame\UIManager.cs:47)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/10 12:05:38
+1. 字段一: System.Collections.Generic.Dictionary`2[System.String,System.String],
+字段二：System.Collections.Generic.Dictionary`2[System.String,UIFrame.BaseUIForm],
+字段三：System.Collections.Generic.Dictionary`2[System.String,UIFrame.BaseUIForm],
+字段四System.Collections.Generic.Stack`1[UIFrame.BaseUIForm]
+初始化完成
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+UIFrame.UIManager:Awake() (at Assets\Scripts\UIFrame\UIManager.cs:64)
+UnityEngine.GameObject:Internal_AddComponentWithType(Type)
+UnityEngine.GameObject:AddComponent(Type) (at D:\unity\Runtime\Export\GameObject.bindings.cs:221)
+UnityEngine.GameObject:AddComponent() (at D:\unity\Runtime\Export\GameObject.bindings.cs:226)
+UIFrame.UIManager:GetInstance() (at Assets\Scripts\UIFrame\UIManager.cs:47)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/10 12:05:38
+2. 初始化加载根UI窗体Canvas预设完成，根UI窗体路径是：Canvas
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+UIFrame.UIManager:Awake() (at Assets\Scripts\UIFrame\UIManager.cs:66)
+UnityEngine.GameObject:Internal_AddComponentWithType(Type)
+UnityEngine.GameObject:AddComponent(Type) (at D:\unity\Runtime\Export\GameObject.bindings.cs:221)
+UnityEngine.GameObject:AddComponent() (at D:\unity\Runtime\Export\GameObject.bindings.cs:226)
+UIFrame.UIManager:GetInstance() (at Assets\Scripts\UIFrame\UIManager.cs:47)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/10 12:05:38
+3. 得到UI根节点:_TagCanvas、全屏节点、固定节点、弹出节点、脚本节点
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+UIFrame.UIManager:Awake() (at Assets\Scripts\UIFrame\UIManager.cs:69)
+UnityEngine.GameObject:Internal_AddComponentWithType(Type)
+UnityEngine.GameObject:AddComponent(Type) (at D:\unity\Runtime\Export\GameObject.bindings.cs:221)
+UnityEngine.GameObject:AddComponent() (at D:\unity\Runtime\Export\GameObject.bindings.cs:226)
+UIFrame.UIManager:GetInstance() (at Assets\Scripts\UIFrame\UIManager.cs:47)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/10 12:05:38
+4. 把本脚本做为“根UI窗体”的子节点
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UIFrame.UIManager:Awake() (at Assets\Scripts\UIFrame\UIManager.cs:78)
+UnityEngine.GameObject:Internal_AddComponentWithType(Type)
+UnityEngine.GameObject:AddComponent(Type) (at D:\unity\Runtime\Export\GameObject.bindings.cs:221)
+UnityEngine.GameObject:AddComponent() (at D:\unity\Runtime\Export\GameObject.bindings.cs:226)
+UIFrame.UIManager:GetInstance() (at Assets\Scripts\UIFrame\UIManager.cs:47)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/10 12:05:38
+5. “根UI窗体”在场景转换时不允许销毁
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UIFrame.UIManager:Awake() (at Assets\Scripts\UIFrame\UIManager.cs:80)
+UnityEngine.GameObject:Internal_AddComponentWithType(Type)
+UnityEngine.GameObject:AddComponent(Type) (at D:\unity\Runtime\Export\GameObject.bindings.cs:221)
+UnityEngine.GameObject:AddComponent() (at D:\unity\Runtime\Export\GameObject.bindings.cs:226)
+UIFrame.UIManager:GetInstance() (at Assets\Scripts\UIFrame\UIManager.cs:47)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/10 12:05:38
+6. 提取UI“窗体预设”路径: UIPrefabs/LogonUIForm
+ Awake初始化完成
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UIFrame.UIManager:Awake() (at Assets\Scripts\UIFrame\UIManager.cs:83)
+UnityEngine.GameObject:Internal_AddComponentWithType(Type)
+UnityEngine.GameObject:AddComponent(Type) (at D:\unity\Runtime\Export\GameObject.bindings.cs:221)
+UnityEngine.GameObject:AddComponent() (at D:\unity\Runtime\Export\GameObject.bindings.cs:226)
+UIFrame.UIManager:GetInstance() (at Assets\Scripts\UIFrame\UIManager.cs:47)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/10 12:05:38
+一、正在根据UI窗体的名称找到相应预设的路径加载到缓存集合
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+UIFrame.UIManager:ShowUIForms(String) (at Assets\Scripts\UIFrame\UIManager.cs:115)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/10 12:05:38
+检查UI窗体是否已加载过
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+UIFrame.UIManager:LoadFormsToAllUIFormsCatch(String) (at Assets\Scripts\UIFrame\UIManager.cs:239)
+UIFrame.UIManager:ShowUIForms(String) (at Assets\Scripts\UIFrame\UIManager.cs:116)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/10 12:05:38
+0. 已经找到UI窗体:LogonUIForm的”预设体”路径:UIPrefabs\LogonUIForm
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+UIFrame.UIManager:LoadUIForm(String) (at Assets\Scripts\UIFrame\UIManager.cs:265)
+UIFrame.UIManager:LoadFormsToAllUIFormsCatch(String) (at Assets\Scripts\UIFrame\UIManager.cs:243)
+UIFrame.UIManager:ShowUIForms(String) (at Assets\Scripts\UIFrame\UIManager.cs:116)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Exception >> 2020/3/10 12:05:38
+NullReferenceException: Object reference not set to an instance of an object
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.Object:Internal_CloneSingle(Object)
+UnityEngine.Object:Instantiate(GameObject) (at D:\unity\Runtime\Export\UnityEngineObject.bindings.cs:275)
+UIFrame.ResourcesMgr:LoadAsset(String, Boolean) (at Assets\Scripts\UIFrame\ResourcesMgr.cs:82)
+UIFrame.UIManager:LoadUIForm(String) (at Assets\Scripts\UIFrame\UIManager.cs:270)
+UIFrame.UIManager:LoadFormsToAllUIFormsCatch(String) (at Assets\Scripts\UIFrame\UIManager.cs:243)
+UIFrame.UIManager:ShowUIForms(String) (at Assets\Scripts\UIFrame\UIManager.cs:116)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/10 12:05:38
+1. UI窗体:UIPrefabs\LogonUIForm的”预设克隆体“已成功加载
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+UIFrame.UIManager:LoadUIForm(String) (at Assets\Scripts\UIFrame\UIManager.cs:271)
+UIFrame.UIManager:LoadFormsToAllUIFormsCatch(String) (at Assets\Scripts\UIFrame\UIManager.cs:243)
+UIFrame.UIManager:ShowUIForms(String) (at Assets\Scripts\UIFrame\UIManager.cs:116)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/10 12:05:38
+2. 设置“UI克隆体”的父节点:LogonUIForm(根据克隆体中带的脚本中不同的“位置信息”)
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+UIFrame.UIManager:LoadUIForm(String) (at Assets\Scripts\UIFrame\UIManager.cs:278)
+UIFrame.UIManager:LoadFormsToAllUIFormsCatch(String) (at Assets\Scripts\UIFrame\UIManager.cs:243)
+UIFrame.UIManager:ShowUIForms(String) (at Assets\Scripts\UIFrame\UIManager.cs:116)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/10 12:05:38
+3. 先把克隆体暂时隐藏：LogonUIForm
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+UIFrame.UIManager:LoadUIForm(String) (at Assets\Scripts\UIFrame\UIManager.cs:301)
+UIFrame.UIManager:LoadFormsToAllUIFormsCatch(String) (at Assets\Scripts\UIFrame\UIManager.cs:243)
+UIFrame.UIManager:ShowUIForms(String) (at Assets\Scripts\UIFrame\UIManager.cs:116)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/10 12:05:38
+4. 把LogonUIForm克隆体，加入到“所有UI窗体LogonUIForm(Clone) (DemoProject.LogonUIForm)” （缓存）集合中. 
+ 窗体已成功加载到缓存，等待显示中。。。
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+UIFrame.UIManager:LoadUIForm(String) (at Assets\Scripts\UIFrame\UIManager.cs:305)
+UIFrame.UIManager:LoadFormsToAllUIFormsCatch(String) (at Assets\Scripts\UIFrame\UIManager.cs:243)
+UIFrame.UIManager:ShowUIForms(String) (at Assets\Scripts\UIFrame\UIManager.cs:116)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/10 12:05:38
+二、正在加载显示UI窗体:LogonUIForm(Clone) (DemoProject.LogonUIForm), UI窗体显示模式是Normal
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:LogFormat(LogType, String, Object[])
+UnityEngine.Debug:LogFormat(String, Object[])
+UIFrame.UIManager:ShowUIForms(String) (at Assets\Scripts\UIFrame\UIManager.cs:126)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/10 12:05:38
+当前窗体已加载到“正在显示”集合中
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+UIFrame.UIManager:ShowUIForms(String) (at Assets\Scripts\UIFrame\UIManager.cs:132)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:13)
+
+Log >> 2020/3/10 12:05:38
+登陆窗体 LogonUIForm 加载已完成！
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+DemoProject.StartProject:Start() (at Assets\Scripts\DemoProject\StartProject.cs:14)
+
+Log >> 2020/3/10 12:06:14
+path: D:\funtime\demo\UIFramework\Log\[Log] 2020-3-10  12-05-38.txt
+WLog:CaptureLogThread(String, String, LogType) (at Assets\Scripts\Lib\WLog.cs:67)
+UnityEngine.Application:CallLogCallback(String, String, LogType, Boolean) (at D:\unity\Runtime\Export\Application.cs:127)
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+WLog:SaveLog() (at Assets\Scripts\Lib\WLog.cs:85)
+WLog:OnApplicationQuit() (at Assets\Scripts\Lib\WLog.cs:72)
+
