@@ -20,11 +20,11 @@ namespace UIFrame
 
         // 定义UI窗体预设路径（参数1：窗体预设名称， 2:窗体预设路径 ）
         private Dictionary<string, string> _DicFormsPaths;
+
         // 缓存所有UI窗体
         private Dictionary<string, BaseUIForm> _DicAllUIForms;
         // 当前已经打开的UI窗体
         private Dictionary<string, BaseUIForm> _DicCurrentShowUIForms;
-
         // 定义“栈”集合，存储显示当前所有“反向切换”的窗体类型
         private Stack<BaseUIForm> _StaCurrentUIForms;
 
@@ -38,7 +38,6 @@ namespace UIFrame
         private Transform _TraPopUp = null;
         // UI管理脚本的节点
         private Transform _TraUIScripts = null;
-        private bool isUIFormLoaded;
 
         // 得到实例
         public static UIManager GetInstance()
@@ -116,6 +115,12 @@ namespace UIFrame
             baseUIForms = LoadFormsToAllUIFormsCatch(uiFormName);
             if (baseUIForms == null) return;
 
+            // 是否清空栈集合中的数据
+            if(baseUIForms.CurrentUIType.IsClearStack)
+            {
+                ClearStackArray();
+            }
+            
             // 根据定义好的显示模式加载不同的UI窗体
             Debug.LogFormat("二、正在加载显示UI窗体:{0}, UI窗体显示模式是{1}", baseUIForms, baseUIForms.CurrentUIType.UIForms_ShowMode);
             switch (baseUIForms.CurrentUIType.UIForms_ShowMode)
@@ -170,7 +175,52 @@ namespace UIFrame
                     break;
             }
         }
-            
+
+
+        #region 显示“UI管理器”内部核心数据，用来测试
+
+        /// <summary>
+        /// 显示所有UI窗体的数量
+        /// </summary>
+        /// <returns></returns>
+        public int ShowAllUIFormsCount()
+        {
+            if (_DicAllUIForms != null)
+            {
+                return _DicAllUIForms.Count;
+            }
+            else return 0;
+        }
+
+        /// <summary>
+        /// 显示“当前窗体”集合中的数量
+        /// </summary>
+        /// <returns></returns>
+        public int ShowCurrentUIFormsCount()
+        {
+            if (_DicCurrentShowUIForms != null)
+            {
+                return _DicCurrentShowUIForms.Count;
+            }
+            else return 0;
+        }
+
+        /// <summary>
+        /// 显示“当前栈”集合中窗体数量
+        /// </summary>
+        /// <returns></returns>
+        public int ShowCurrentStackUIFormsCount()
+        {
+            if (_StaCurrentUIForms != null)
+            {
+                return _StaCurrentUIForms.Count;
+            }
+            else return 0;
+        }
+
+
+        #endregion
+
         #region 私有方法
 
         /// <summary>
@@ -188,12 +238,9 @@ namespace UIFrame
             Debug.LogFormat("检查UI窗体是否已加载过");
             if (baseUIResult == null)
             {
-                isUIFormLoaded = false;
                 // 加载指定路径的 UI窗体
                 baseUIResult = LoadUIForm(uiFormsName);
             }
-
-            isUIFormLoaded = true;
             return baseUIResult;
         }
 
@@ -332,13 +379,13 @@ namespace UIFrame
             _DicCurrentShowUIForms.TryGetValue(strUIFormName, out baseUIForm);
             if (baseUIForm == null) return;
 
-            // 指定窗体，标记为“”隐藏状态 ， 且从“正在显示集合中移除”
+            // 指定窗体，标记为隐藏状态 ， 且从“正在显示集合中移除”
             baseUIForm.Hiding();
             _DicCurrentShowUIForms.Remove(strUIFormName);
         }
 
         /// <summary>
-        /// "反向切换“属性的窗体的出栈方法
+        /// "反向切换“属性的窗体关闭的出栈方法
         /// </summary>
         private void PopUIForms()
         {
@@ -366,7 +413,7 @@ namespace UIFrame
 
 
         /// <summary>
-        /// 隐藏其它窗口模式
+        /// 打开“隐藏其它”属性的窗体，同时隐藏其它窗口模式
         /// </summary>
         /// <param name="strUIName"></param>
         private void EnterUIFormsAndHideOther(string strUIName)
@@ -374,12 +421,12 @@ namespace UIFrame
             //参数检查
             if (string.IsNullOrEmpty(strUIName)) return;
 
-            BaseUIForm baseUIForm;
+            BaseUIForm baseUIForm;  // UI窗体基类
             _DicCurrentShowUIForms.TryGetValue(strUIName, out baseUIForm);
             if (baseUIForm != null) return;
 
             //  把正在显示集合与栈集合中所有的窗体都隐藏
-            foreach (BaseUIForm baseUI in _DicCurrentShowUIForms)
+            foreach (BaseUIForm baseUI in _DicCurrentShowUIForms.Values)
             {
                 baseUI.Hiding();
             }
@@ -388,7 +435,7 @@ namespace UIFrame
                 staUI.Hiding();
             }
 
-            BaseUIForm BaseUIFormFromAll;
+            BaseUIForm BaseUIFormFromAll;  // 从集合中得到的UI窗体基类
             // 把当前窗体加入到”正在显示窗体“”集合中， 且做显示处理
             _DicAllUIForms.TryGetValue(strUIName, out BaseUIFormFromAll);
             if(BaseUIFormFromAll != null)
@@ -396,6 +443,22 @@ namespace UIFrame
                 _DicCurrentShowUIForms.Add(strUIName, BaseUIFormFromAll);
                 BaseUIFormFromAll.Display();
             }
+        }
+
+        /// <summary>
+        /// 是否清空栈集合中的数据
+        /// </summary>
+        /// <returns></returns>
+        private bool ClearStackArray()
+        {
+            if (_StaCurrentUIForms != null && _StaCurrentUIForms.Count>=1)
+            {
+                // 清空栈集合
+                _StaCurrentUIForms.Clear();
+                return true;
+            }
+            return false;
+
         }
 
 

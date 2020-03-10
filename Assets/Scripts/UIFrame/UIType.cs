@@ -21,6 +21,10 @@ namespace UIFrame
         public UIFormLucencyType UIForms_LucencyType = UIFormLucencyType.Lucency;
 
 
+        // 是否清空栈集合
+        public bool IsClearStack = false;
+
+
 
     }
 }
