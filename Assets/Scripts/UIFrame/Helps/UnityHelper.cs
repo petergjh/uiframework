@@ -39,7 +39,7 @@ namespace UIFrame
 
 
         /// <summary>
-        /// 获取子节点脚本
+        /// 查找并获取子节点脚本方法
         /// </summary>
         /// <typeparam name="T">泛型，这里代指unity组件</typeparam>
         /// <param name="goParent"></param>
@@ -60,17 +60,56 @@ namespace UIFrame
             }
         }
 
-        //给子节点添加脚本
+
+        /// <summary>
+        /// 查找并给子节点添加脚本方法
+        /// </summary>
+        /// <typeparam name="T">泛型</typeparam>
+        /// <param name="goParent">父节点对象</param>
+        /// <param name="childName">子节点名称</param>
+        /// <returns></returns>
         public static T AddChildNodeComponent<T>(GameObject goParent, string childName) where T:Component
         {
+            Transform searchTransform = null;  // 查找特定节点结果
+
             //  查找特定子节点
+            searchTransform = FindTheChildNode(goParent, childName);
 
             // 如果查找成功，比较若有同名重复脚本则删除，无测添加
-
+            if (searchTransform != null)
+            {
+                // 如果已经有相同的脚本，则先删除
+                T[] componentScriptsArray = searchTransform.GetComponents<T>();
+                for (int i = 0; i < componentScriptsArray.Length; i++)
+                {
+                    if (componentScriptsArray[i] != null)
+                    {
+                        Destroy(componentScriptsArray[i]);
+                    }
+                }
+                return searchTransform.gameObject.AddComponent<T>();
+            }
+            else
+            {
+                return null;
+            }
             // 如果查找不成功，返回null
 
         }
 
+
+        /// <summary>
+        /// 给子节点添加父对象方法
+        /// </summary>
+        /// <param name="parents">父对象的方位</param>
+        /// <param name="child">子对象的方法</param>
+        public static void AddChildNodeToParentNode(Transform parents, Transform child)
+        {
+            child.SetParent(parents, false);
+            child.localPosition = Vector3.zero;
+            child.localScale = Vector3.one;
+            child.localEulerAngles = Vector3.zero;
+        }
 
 
     }
