@@ -19,6 +19,8 @@ namespace DemoProject
 
             // 注册返回窗体的事件
             RigisterButtonObjectEvent("BtnClose", ReturnLogonUIForm);
+            // 可用Lambda表达式简写 
+            // RigisterButtonObjectEvent("BtnClose", m => CloseUIForm());
 
         }
 
