@@ -122,10 +122,12 @@ namespace UIFrame
             baseUIForms = LoadFormsToAllUIFormsCatch(uiFormName);
             if (baseUIForms == null) return;
 
-            // 是否清空栈集合中的数据
+            // 在UI管理器的打开UI窗体方法中定义是否清空栈集合中的数据
             if(baseUIForms.CurrentUIType.IsClearStack)
             {
+                Debug.Log("在UI管理器的打开UI窗体方法中定义是否清空栈集合中的数据!");
                 ClearStackArray();
+                Debug.Log("已经清空栈集合！");
             }
             
             // 根据定义好的显示模式加载不同的UI窗体
