@@ -73,6 +73,7 @@ namespace UIFrame
             _TraFixed = _TraCanvasTransfrom.Find("Fixed");
             _TraPopUp = _TraCanvasTransfrom.Find("PopUp");
             _TraUIScripts = _TraCanvasTransfrom.Find("_ScriptMgr");
+            Debug.Log("层级视图的节点查找暂用Unity的对象标签，后面需用帮助类重构");
 
             this.gameObject.transform.SetParent(_TraUIScripts,false);
             Debug.Log("4. 把本脚本做为“根UI窗体”的子节点");

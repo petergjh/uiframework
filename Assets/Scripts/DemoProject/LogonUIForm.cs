@@ -16,13 +16,17 @@ namespace DemoProject
             base.CurrentUIType.UIForms_LucencyType = UIFormLucencyType.Lucency; ;
 
             // 查找按钮节点
-            Transform UILogonForm = GameObject.FindGameObjectWithTag("_TestTagLogonUIForm").transform;
-            Transform traLogonSysButton = UILogonForm.Find("BG/Btn_OK");
+            //Transform UILogonForm = GameObject.FindGameObjectWithTag("_TestTagLogonUIForm").transform;
+            //Transform traLogonSysButton = UILogonForm.Find("BG/Btn_OK");
+            //Debug.Log("层级视图的节点查找暂用Unity的对象标签，后面需用帮助类重构");
+            GameObject goButton = UnityHelper.FindTheChildNode(this.gameObject, "Btn_OK").gameObject;
+            Debug.Log("已查找到子节点: "+goButton);
+
 
             // 给按钮注册事件方法
-            if(traLogonSysButton != null)
+            if(goButton!= null)
             {
-                EventTriggerListener.Get(traLogonSysButton.gameObject).onClick = LogonSys;
+                EventTriggerListener.Get(goButton.gameObject).onClick = LogonSys;
             }
         }
 
