@@ -69,11 +69,16 @@ namespace UIFrame
             Debug.LogFormat("3. 得到UI根节点:{0}、全屏节点、固定节点、弹出节点、脚本节点", SysDefine.SYS_TAG_CANVAS );
             _TraCanvasTransfrom = GameObject.FindGameObjectWithTag(SysDefine.SYS_TAG_CANVAS).transform;
             //_TraCanvasTransfrom = GameObject.FindGameObjectWithTag("_TagCanvas").transform;
-            _TraNormal = _TraCanvasTransfrom.Find("Normal");
-            _TraFixed = _TraCanvasTransfrom.Find("Fixed");
-            _TraPopUp = _TraCanvasTransfrom.Find("PopUp");
-            _TraUIScripts = _TraCanvasTransfrom.Find("_ScriptMgr");
-            Debug.Log("层级视图的节点查找暂用Unity的对象标签，后面需用帮助类重构");
+            //_TraNormal = _TraCanvasTransfrom.Find("Normal");
+            //_TraFixed = _TraCanvasTransfrom.Find("Fixed");
+            //_TraPopUp = _TraCanvasTransfrom.Find("PopUp");
+            //_TraUIScripts = _TraCanvasTransfrom.Find("_ScriptMgr");
+            //Debug.Log("层级视图的节点查找暂用Unity的对象标签，后面需用帮助类重构");
+            _TraNormal = UnityHelper.FindTheChildNode(_TraCanvasTransfrom.gameObject, SysDefine.SYS_NORMAL_NODE);
+            _TraFixed = UnityHelper.FindTheChildNode(_TraCanvasTransfrom.gameObject, SysDefine.SYS_FIXED_NODE);
+            _TraPopUp = UnityHelper.FindTheChildNode(_TraCanvasTransfrom.gameObject, SysDefine.SYS_POPUP_NODE);
+            _TraUIScripts = UnityHelper.FindTheChildNode(_TraCanvasTransfrom.gameObject, SysDefine.SYS_SCRIPTMANAGER_NODE);
+
 
             this.gameObject.transform.SetParent(_TraUIScripts,false);
             Debug.Log("4. 把本脚本做为“根UI窗体”的子节点");

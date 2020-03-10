@@ -21,8 +21,10 @@ namespace UIFrame
 
         // 定义UI窗体类型的公共属性
         public UIType CurrentUIType { get => _CurrentUIType; set => _CurrentUIType = value; }
-        
-        // 定义四个虚方法，设置窗体的四个状态
+
+        #region 窗体的四种状态
+
+        // 定义四个虚方法，设置窗体显示的四个状态
         public virtual void Display()
         {
             this.gameObject.SetActive(true);
@@ -42,6 +44,32 @@ namespace UIFrame
         {
             this.gameObject.SetActive(true);
         }
+
+        #endregion
+
+
+        #region 封装子类常用的方法
+
+        /// <summary>
+        /// 把注册按钮事件利用委托进行封装
+        /// </summary>
+        /// <param name="buttonName">节点名称</param>
+        /// <param name="delHandle">委托事件，需注册的方法</param>
+        protected void RigisterButtonObjectEvent(string buttonName, EventTriggerListener.VoidDelegate delHandle)
+        {
+            GameObject goButton = UnityHelper.FindTheChildNode(this.gameObject, buttonName).gameObject;
+            Debug.Log("已查找到子节点: " + goButton);
+
+            // 给按钮注册事件方法
+            if (goButton != null)
+            {
+                EventTriggerListener.Get(goButton.gameObject).onClick = delHandle;
+            }
+        }
+        #endregion
+
+
     }
+
 
 }

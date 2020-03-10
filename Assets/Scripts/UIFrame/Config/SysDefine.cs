@@ -58,6 +58,15 @@ namespace UIFrame
         // 标签常量
         public const string SYS_TAG_CANVAS = "_TagCanvas";
 
+        // 节点常量
+        public const string SYS_NORMAL_NODE = "Normal";
+        public const string SYS_FIXED_NODE = "Fixed";
+        public const string SYS_POPUP_NODE = "PopUp";
+        public const string SYS_SCRIPTMANAGER_NODE = "_ScriptMgr";
+
+        // 摄像机层深常量
+
+
         // 全局性方法
         public void Test()
         {

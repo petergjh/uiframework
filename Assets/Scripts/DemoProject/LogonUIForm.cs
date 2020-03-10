@@ -19,15 +19,16 @@ namespace DemoProject
             //Transform UILogonForm = GameObject.FindGameObjectWithTag("_TestTagLogonUIForm").transform;
             //Transform traLogonSysButton = UILogonForm.Find("BG/Btn_OK");
             //Debug.Log("层级视图的节点查找暂用Unity的对象标签，后面需用帮助类重构");
-            GameObject goButton = UnityHelper.FindTheChildNode(this.gameObject, "Btn_OK").gameObject;
-            Debug.Log("已查找到子节点: "+goButton);
+            //GameObject goButton = UnityHelper.FindTheChildNode(this.gameObject, "Btn_OK").gameObject;
+            //Debug.Log("已查找到子节点: "+goButton);
 
+            //// 给按钮注册事件方法
+            //if(goButton!= null)
+            //{
+            //    EventTriggerListener.Get(goButton.gameObject).onClick = LogonSys;
+            //}
 
-            // 给按钮注册事件方法
-            if(goButton!= null)
-            {
-                EventTriggerListener.Get(goButton.gameObject).onClick = LogonSys;
-            }
+            RigisterButtonObjectEvent("Btn_OK", LogonSys);
         }
 
         /// <summary>
