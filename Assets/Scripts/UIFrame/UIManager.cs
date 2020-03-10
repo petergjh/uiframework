@@ -92,6 +92,7 @@ namespace UIFrame
             {
                 _DicFormsPaths.Add("LogonUIForm", @"UIPrefabs\LogonUIForm");
                 _DicFormsPaths.Add("SelectHeroUIForm", @"UIPrefabs\SelectHeroUIForm");
+                _DicFormsPaths.Add("MainCityUIForm", @"UIPrefabs\MainCityUIForm");
             }
             
         }
@@ -317,7 +318,7 @@ namespace UIFrame
 
                 // 4. 把克隆体，加入到“所有UI窗体 _DicAllUIForms” （缓存）集合中。
                 _DicAllUIForms.Add(uiFormName, baseUIForm);
-                Debug.LogFormat("4. 把{0}克隆体，加入到“所有UI窗体{1}” （缓存）集合中. \n 窗体已成功加载到缓存，等待显示中。。。", uiFormName, baseUIForm);
+                Debug.LogFormat("4. 把{0}克隆体，加入到“所有UI窗体baseUIForm: {1}” （缓存）集合中. \n 窗体已成功加载到缓存，等待显示中。。。", uiFormName, baseUIForm);
                 return baseUIForm;
             }
 

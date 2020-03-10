@@ -15,9 +15,16 @@ namespace DemoProject
             Debug.Log("显示当前窗体时隐藏其它窗体,减少不必要加载的性能消耗");
 
             // 注册进入主城的事件
-            RigisterButtonObjectEvent("BtnConfirm", EnterMainCityUIForm);
+            // RigisterButtonObjectEvent("BtnConfirm", EnterMainCityUIForm);
+            RigisterButtonObjectEvent("BtnConfirm",
+                p =>
+                {
+                    OpenUIForm("MainCityUIForm");
+                    // 
+                }
+                );
 
-            // 注册返回窗体的事件
+            // 注册返回上一页窗体的事件
             RigisterButtonObjectEvent("BtnClose", ReturnLogonUIForm);
             // 可用Lambda表达式简写 
             // RigisterButtonObjectEvent("BtnClose", m => CloseUIForm());
@@ -33,10 +40,10 @@ namespace DemoProject
 
         }
 
-        public void EnterMainCityUIForm(GameObject go)
-        {
-            print("进入主城UI窗体！");
-        }
+        // public void EnterMainCityUIForm(GameObject go)
+        // {
+          //  print("进入主城UI窗体！");
+        // }
 
         public void ReturnLogonUIForm(GameObject go)
         {
