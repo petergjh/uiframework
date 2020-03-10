@@ -20,7 +20,8 @@ namespace DemoProject
                 p =>
                 {
                     OpenUIForm("MainCityUIForm");
-                    // 
+                    OpenUIForm("HeroInfoUIForm");
+                    Debug.LogFormat("已使用Lamda表达式完成 MainCityUIForm 和 HeroInfoUIForm 两个窗体的加载");
                 }
                 );
 

@@ -93,6 +93,7 @@ namespace UIFrame
                 _DicFormsPaths.Add("LogonUIForm", @"UIPrefabs\LogonUIForm");
                 _DicFormsPaths.Add("SelectHeroUIForm", @"UIPrefabs\SelectHeroUIForm");
                 _DicFormsPaths.Add("MainCityUIForm", @"UIPrefabs\MainCityUIForm");
+                _DicFormsPaths.Add("HeroInfoUIForm", @"UIPrefabs\HeroInfoUIForm");
             }
             
         }
@@ -138,7 +139,7 @@ namespace UIFrame
                 case UIFormShowMode.Normal:          // 普通显示窗口模式
                     // 把当前窗体加载到“当前窗体”集合中
                     LoadUIToCurrentCache(uiFormName);
-                    Debug.Log("当前窗体已加载到“正在显示”集合中");
+                    Debug.LogFormat("当前窗体:{0}已加载到“正在显示”集合中, 窗体显示成功。", uiFormName);
                     break;
                 case UIFormShowMode.ReverseChange:   // 需要反向切换窗口模式
                     PushUIFormToStack(uiFormName);
