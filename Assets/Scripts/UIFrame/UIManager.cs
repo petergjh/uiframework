@@ -176,9 +176,12 @@ namespace UIFrame
                 case UIFormShowMode.ReverseChange:
                     // 反向切换窗体的关闭
                     PopUIForms();
+                    Debug.Log("关闭了反向切换的窗体：" + uiFormName);
                     break;
                 case UIFormShowMode.HideOther:
-                    // 隐藏窗体的关闭
+                    // 隐藏其它窗体
+                    EnterUIFormsAndHideOther(uiFormName);
+                    Debug.Log(" 打开当前窗体,并隐藏其它窗体：" + uiFormName);
                     break;
             }
         }

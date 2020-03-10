@@ -66,7 +66,41 @@ namespace UIFrame
                 EventTriggerListener.Get(goButton.gameObject).onClick = delHandle;
             }
         }
+
+        // 打开UI窗体
+        protected void OpenUIForm(string uiFormName)
+        {
+            UIManager.GetInstance().ShowUIForms(uiFormName);
+        }
+
+
+        /// <summary>
+        /// 关闭"当前"UI窗体
+        /// </summary>
+        /// <param name="uiFormName"></param>
+        //protected void CloseUIForm(string uiFormName)
+        protected void CloseUIForm()
+        {
+            string strUIFormName = string.Empty;  // 处理后的UIForm名称
+            int intPosition = -1;
+
+            strUIFormName = GetType().ToString();
+            intPosition = strUIFormName.IndexOf('.');
+            if (intPosition !=-1)
+            {
+                // 剪切字符串中“.”之间的部分
+                strUIFormName = strUIFormName.Substring(intPosition + 1);
+            }
+
+            UIManager.GetInstance().CloseUIForms(strUIFormName);
+        }
+
+
+
+
         #endregion
+
+
 
 
     }

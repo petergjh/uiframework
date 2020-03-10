@@ -39,7 +39,9 @@ namespace DemoProject
             print("登陆方法被执行");
             // 前台或后台检查登陆账号信息
             //  如果成功，切换下一个窗体
-            UIManager.GetInstance().ShowUIForms("SelectHeroUIForm");
+            //UIManager.GetInstance().ShowUIForms("SelectHeroUIForm");
+            //OpenUIForm("SelectHeroUIForm");
+            OpenUIForm(ProConst.SELECT_HERO_FORM);
         }
 
     }

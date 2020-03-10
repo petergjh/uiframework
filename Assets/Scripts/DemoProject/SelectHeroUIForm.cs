@@ -11,10 +11,14 @@ namespace DemoProject
         public void Awake()
         {
             // 窗体的性质
-            CurrentUIType.UIForms_ShowMode = UIFormShowMode.HideOther;
+            // CurrentUIType.UIForms_ShowMode = UIFormShowMode.HideOther;
             Debug.Log("显示当前窗体时隐藏其它窗体,减少不必要加载的性能消耗");
 
-            // 注册事件
+            // 注册进入主城的事件
+            RigisterButtonObjectEvent("BtnConfirm", EnterMainCityUIForm);
+
+            // 注册返回窗体的事件
+            RigisterButtonObjectEvent("BtnClose", ReturnLogonUIForm);
 
         }
 
@@ -25,6 +29,21 @@ namespace DemoProject
             print("当前窗体集合中的数量 = " + UIManager.GetInstance().ShowCurrentUIFormsCount());
             print("栈窗体集合中的数量 = " + UIManager.GetInstance().ShowCurrentStackUIFormsCount());
 
+        }
+
+        public void EnterMainCityUIForm(GameObject go)
+        {
+            print("进入主城UI窗体！");
+        }
+
+        public void ReturnLogonUIForm(GameObject go)
+        {
+            //UIManager.GetInstance().CloseUIForms("SelectHeroUIForm");
+            //UIManager.GetInstance().CloseUIForms(ProConst.SELECT_HERO_FORM);
+            CloseUIForm();
+
+            print("返回");
+            print(GetType());  // 返回命名空间和类名
         }
 
     }
