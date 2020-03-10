@@ -278,6 +278,7 @@ namespace UIFrame
             // 1. 根据预设体路径，加载“预设克隆体”
             if (!string.IsNullOrEmpty(strUIFormPaths))
             {
+                Debug.Log("开始加载预设体：" + uiFormName);
                 goCloneUIPrefabs = ResourcesMgr.GetInstance().LoadAsset(strUIFormPaths, false);
                 Debug.LogFormat("1. UI窗体:{0}的”预设克隆体“已成功加载", strUIFormPaths);
             }
@@ -286,7 +287,7 @@ namespace UIFrame
             if(_TraCanvasTransfrom!=null && goCloneUIPrefabs!=null)
             {
                 baseUIForm = goCloneUIPrefabs.GetComponent<BaseUIForm>();
-                Debug.LogFormat("2. 设置“UI克隆体”的父节点:{0}(根据克隆体中带的脚本中不同的“位置信息”)",uiFormName);
+                Debug.LogFormat("2. 设置“UI克隆体”的父节点。(根据克隆体中带的脚本中不同的“位置信息”）本克隆体类型是:{0})", baseUIForm.CurrentUIType.UIForms_Type);
 
                 if(baseUIForm==null)
                 {
@@ -297,12 +298,15 @@ namespace UIFrame
                 {
                     case UIFormType.Normal:
                         goCloneUIPrefabs.transform.SetParent(_TraNormal, false);
+                        Debug.LogFormat("所以把克隆体挂到类型{0}所对应的unity父节点: _TraNormal", baseUIForm.CurrentUIType.UIForms_Type);
                         break;
                     case UIFormType.Fixed:
                         goCloneUIPrefabs.transform.SetParent(_TraFixed, false);
+                        Debug.LogFormat("所以把克隆体挂到类型{0}所对应的unity父节点: _TraFixed", baseUIForm.CurrentUIType.UIForms_Type);
                         break;
                     case UIFormType.PopUP:
                         goCloneUIPrefabs.transform.SetParent(_TraPopUp, false);
+                        Debug.LogFormat("所以把克隆体挂到类型{0}所对应的unity父节点: _TraPopUp", baseUIForm.CurrentUIType.UIForms_Type);
                         break;
                     default:
                         break;
