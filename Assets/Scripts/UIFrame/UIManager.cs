@@ -94,6 +94,8 @@ namespace UIFrame
                 _DicFormsPaths.Add("SelectHeroUIForm", @"UIPrefabs\SelectHeroUIForm");
                 _DicFormsPaths.Add("MainCityUIForm", @"UIPrefabs\MainCityUIForm");
                 _DicFormsPaths.Add("HeroInfoUIForm", @"UIPrefabs\HeroInfoUIForm");
+                _DicFormsPaths.Add("MarketUIForm", @"UIPrefabs\MarketUIForm");
+                Debug.Log("提取窗体预设路径。");
             }
             
         }

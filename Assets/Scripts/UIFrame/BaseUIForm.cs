@@ -22,27 +22,47 @@ namespace UIFrame
         // 定义UI窗体类型的公共属性
         public UIType CurrentUIType { get => _CurrentUIType; set => _CurrentUIType = value; }
 
-        #region 窗体的四种状态
+        #region 窗体的四种生命周期状态: 显示、隐藏、重新显示、冻结
 
         // 定义四个虚方法，设置窗体显示的四个状态
         public virtual void Display()
         {
             this.gameObject.SetActive(true);
+            Debug.Log("设置窗体生命周期状态为：显示状态");
+            // 设置模态窗体调用（必须是弹出窗体）
+            if(_CurrentUIType.UIForms_Type==UIFormType.PopUP)
+            {
+                Debug.Log("设置弹出窗体的模态窗体调用。");
+                UIMaskManager.GetInstance().SetMaskWindow(this.gameObject, CurrentUIType.UIForms_LucencyType);
+            }
         }
 
         public virtual void Hiding()
         {
             this.gameObject.SetActive(false);
+            Debug.Log("设置窗体生命周期状态为：隐藏状态");
+            // 取消模态窗体调用
+            if (_CurrentUIType.UIForms_Type == UIFormType.PopUP)
+            {
+                UIMaskManager.GetInstance().CancelMaskWindow();
+            }
         }
 
         public virtual void ReDisplay()
         {
             this.gameObject.SetActive(true);
+            Debug.Log("设置窗体生命周期状态为：重新显示状态");
+            // 设置模态窗体调用（必须是弹出窗体）
+            if (_CurrentUIType.UIForms_Type == UIFormType.PopUP)
+            {
+                UIMaskManager.GetInstance().SetMaskWindow(this.gameObject, CurrentUIType.UIForms_LucencyType);
+            }
         }
 
         public virtual void Freeze()
         {
             this.gameObject.SetActive(true);
+            Debug.Log("设置窗体生命周期状态为：冻结显示状态");
         }
 
         #endregion
