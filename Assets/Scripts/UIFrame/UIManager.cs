@@ -170,7 +170,7 @@ namespace UIFrame
             _DicAllUIForms.TryGetValue(uiFormName, out baseUIForm);
                 if (baseUIForm == null) return;
 
-            // 根据窗体不同的显示类型，分别按不同的方法关闭
+            Debug.Log(" 根据窗体不同的显示类型，分别按不同的方法关闭");
             switch(baseUIForm.CurrentUIType.UIForms_ShowMode)
             {
                 case UIFormShowMode.Normal:
@@ -416,22 +416,22 @@ namespace UIFrame
         {
             if(_StaCurrentUIForms.Count >=2)
             {
-                // 出栈处理
+                Debug.Log(" 栈元素数量 >1, 则出栈处理");
                 BaseUIForm topUIForm = _StaCurrentUIForms.Pop();
 
-                //  隐藏处理
+                Debug.Log("  隐藏出栈的窗体");
                 topUIForm.Hiding();
 
-                // 出栈后，下一个窗体“重新显示”
+                Debug.Log(" 出栈后，“重新显示”下一个窗体 ");
                 BaseUIForm nextUIForm = _StaCurrentUIForms.Peek();
                 nextUIForm.ReDisplay();
             }
             else if (_StaCurrentUIForms.Count == 1)
             {
-                // 出栈处理
+                Debug.Log("栈元素数量 =1, 出栈处理");
                 BaseUIForm topUIForms = _StaCurrentUIForms.Pop();
 
-                // 隐藏处理
+                Debug.Log(" 隐藏出栈的窗体。");
                 topUIForms.Hiding();
             }
         }

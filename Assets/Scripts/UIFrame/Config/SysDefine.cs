@@ -32,7 +32,7 @@ namespace UIFrame
     {
         Normal,  // 普通
         ReverseChange,  // 反向切换
-        HideOther  // 隐藏
+        HideOther  // 隐藏其它
     }
     
     /// <summary>

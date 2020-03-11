@@ -80,7 +80,7 @@ namespace UIFrame
             _GoTopPanel.transform.SetAsLastSibling();
             Debug.LogFormat("顶层窗体：{0}已完成下移",_GoTopPanel);
 
-            // 启用遮罩窗体以及设置透明度
+            // 启用遮罩窗体，并根据窗体的透明度类型分别设置透明度
             switch(lucencyType)
             {
                 // 完全透明，不能穿透
@@ -115,7 +115,11 @@ namespace UIFrame
 
                 // 可以穿透
                 case UIFormLucencyType.Pentrate:
-                    Debug.Log("窗体可穿透");
+                    Debug.Log("遮罩窗体允许穿透");
+                    if(_GoMaskPanel.activeInHierarchy)
+                    {
+                        _GoMaskPanel.SetActive(false);
+                    }
                     break;
 
                 default:
@@ -151,14 +155,14 @@ namespace UIFrame
             {
                 // 隐藏
                 _GoMaskPanel.SetActive(false);
-                Debug.LogFormat("遮罩窗体：{0}已完成隐藏}",_GoMaskPanel);
+                Debug.LogFormat("遮罩窗体：{0}已完成隐藏",_GoMaskPanel);
             }
 
             // 恢复当前UI摄像机的层深
             if (_UICamera != null)
             {
                 _UICamera.depth = _OriginalUICameralDepth;  // 恢复层深
-                Debug.LogFormat("当前UI摄像机的层深值：{0}已恢复到原来的{1}}",_UICamera.depth, _OriginalUICameralDepth);
+                Debug.LogFormat("当前UI摄像机的层深值已恢复到原来的{0}", _OriginalUICameralDepth);
             }
         }
     }
