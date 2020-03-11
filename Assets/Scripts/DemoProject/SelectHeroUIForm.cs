@@ -19,9 +19,10 @@ namespace DemoProject
             RigisterButtonObjectEvent("BtnConfirm",
                 p =>
                 {
+                    Debug.LogFormat("使用Lamda表达式对同一按钮:{0}:{1}进行多个事件的委托注册响应.",this.name,p.name);
                     OpenUIForm("MainCityUIForm");
                     OpenUIForm("HeroInfoUIForm");
-                    Debug.LogFormat("已使用Lamda表达式完成 MainCityUIForm 和 HeroInfoUIForm 两个窗体的加载");
+
                 }
                 );
 

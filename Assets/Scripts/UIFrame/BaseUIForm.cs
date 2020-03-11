@@ -64,6 +64,7 @@ namespace UIFrame
             if (goButton != null)
             {
                 EventTriggerListener.Get(goButton.gameObject).onClick = delHandle;
+                Debug.LogFormat("节点按钮相对应的委托事件已经成功完成。"+delHandle);
             }
         }
 

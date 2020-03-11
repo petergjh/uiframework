@@ -120,7 +120,7 @@ namespace UIFrame
             // 参数检查
             if (string.IsNullOrEmpty(uiFormName)) return;
 
-            Debug.LogFormat("一、正在根据UI窗体的名称找到相应预设的路径加载到缓存集合");
+            Debug.LogFormat("一、正在根据UI窗体的名称:{0}查找相应预设的路径加载到缓存集合",uiFormName);
             baseUIForms = LoadFormsToAllUIFormsCatch(uiFormName);
             if (baseUIForms == null) return;
 
@@ -133,7 +133,7 @@ namespace UIFrame
             }
             
             // 根据定义好的显示模式加载不同的UI窗体
-            Debug.LogFormat("二、正在加载显示UI窗体:{0}, UI窗体显示模式是{1}", baseUIForms, baseUIForms.CurrentUIType.UIForms_ShowMode);
+            Debug.LogFormat("二、正在加载显示UI窗体:{0}, UI窗体显示模式是{1}",uiFormName, baseUIForms.CurrentUIType.UIForms_ShowMode);
             switch (baseUIForms.CurrentUIType.UIForms_ShowMode)
             {
                 case UIFormShowMode.Normal:          // 普通显示窗口模式
@@ -249,12 +249,13 @@ namespace UIFrame
             BaseUIForm baseUIResult = null; // 加载的返回UI窗体基类
 
             _DicAllUIForms.TryGetValue(uiFormsName, out baseUIResult);
-            Debug.LogFormat("检查UI窗体是否已加载过");
+            Debug.LogFormat("检查UI窗体{0}是否已加载过",uiFormsName);
             if (baseUIResult == null)
             {
                 // 加载指定路径的 UI窗体
                 baseUIResult = LoadUIForm(uiFormsName);
             }
+            Debug.LogFormat("正在准备加载窗体：" + uiFormsName);
             return baseUIResult;
         }
 
@@ -352,7 +353,11 @@ namespace UIFrame
             if(baseUIFormFromAllCache!=null)
             {
                 _DicCurrentShowUIForms.Add(uiFormName, baseUIFormFromAllCache);
+                Debug.LogFormat("当前待显示窗体{0}已加载到正在显示的UI窗体集合缓存{1}中。",uiFormName,baseUIFormFromAllCache);
+
                 baseUIFormFromAllCache.Display();  // 显示当前窗体
+                Debug.LogFormat("执行显示当前窗体方法，窗体：{0}正在显示。：", uiFormName);
+
             }
 
         }
@@ -472,6 +477,7 @@ namespace UIFrame
             if (_StaCurrentUIForms != null && _StaCurrentUIForms.Count>=1)
             {
                 // 清空栈集合
+                Debug.LogFormat("正在执行栈集合的清空操作！");
                 _StaCurrentUIForms.Clear();
                 return true;
             }
