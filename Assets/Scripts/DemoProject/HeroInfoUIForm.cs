@@ -17,6 +17,11 @@ namespace DemoProject
             // 定义窗体性质 
             CurrentUIType.UIForms_Type = UIFormType.Fixed;  // 把此窗体挂到相应unity的父节点上显示
 
+            // 事件注册：返回
+            //RigisterButtonObjectEvent("BtnBack",
+             //   p => CloseUIForm()
+              //  );
+
             
         }
 

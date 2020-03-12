@@ -11,12 +11,31 @@ namespace DemoProject
         private void Awake()
         {
             // 窗体性质使用默认值
-            CurrentUIType.UIForms_ShowMode = UIFormShowMode.HideOther;
+            //CurrentUIType.UIForms_ShowMode = UIFormShowMode.HideOther;
 
-            // 事件注册
+            // 事件注册：按钮，打开游戏商城
             RigisterButtonObjectEvent("BtnMarket",
                 p => OpenUIForm("MarketUIForm"));
             Debug.Log("注册BtnMarket点击事件，打开MarketUIForm窗体");
+
+
+            // 事件注册：按钮，返回前一页
+            // RigisterButtonObjectEvent("BtnBack",
+            //    p => CloseUIForm()
+            //   );
+
+            // 事件注册：按钮，关闭当前画面的两个窗体
+            RigisterButtonObjectEvent("BtnBack",
+            p=>
+            {
+                // 关闭当前窗体
+                CloseUIForm();
+                
+                // 关闭同画面HeroInfoUIForm窗体
+                UIManager.GetInstance().CloseUIForms("HeroInfoUIForm");
+            }
+            );
+
         }
 
     }

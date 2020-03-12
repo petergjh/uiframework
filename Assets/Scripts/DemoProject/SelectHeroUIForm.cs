@@ -14,22 +14,29 @@ namespace DemoProject
             // CurrentUIType.UIForms_ShowMode = UIFormShowMode.HideOther;
             Debug.Log("显示当前窗体时隐藏其它窗体,减少不必要加载的性能消耗");
 
-            // 注册进入主城的事件
+            // 事件注册：进入主城
             // RigisterButtonObjectEvent("BtnConfirm", EnterMainCityUIForm);
             RigisterButtonObjectEvent("BtnConfirm",
                 p =>
                 {
-                    Debug.LogFormat("使用Lamda表达式对同一按钮:{0}:{1}进行多个事件的委托注册响应.",this.name,p.name);
+                    Debug.LogFormat("一个按钮打开多个窗体：使用Lamda表达式对同一按钮:{0}:{1}进行多个事件的委托注册响应.",this.name,p.name);
                     OpenUIForm("MainCityUIForm");
                     OpenUIForm("HeroInfoUIForm");
 
                 }
                 );
 
-            // 注册返回上一页窗体的事件
+            // 事件注册: 返回上一页
             RigisterButtonObjectEvent("BtnClose", ReturnLogonUIForm);
             // 可用Lambda表达式简写 
             // RigisterButtonObjectEvent("BtnClose", m => CloseUIForm());
+
+            // 事件注册：按钮，打开英雄详情
+            RigisterButtonObjectEvent("BtnHero2",
+                p => OpenUIForm("HeroDetailUIForm"));
+            Debug.Log("注册BtnMarket点击事件，打开MarketUIForm窗体");
+
+
 
         }
 

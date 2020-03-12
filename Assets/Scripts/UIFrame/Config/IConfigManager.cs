@@ -24,7 +24,6 @@ namespace UIFrame
         // 方法：得到配置文件AppSetting最大的数量
         int GetAppSettingMaxNumber();
 
-
     }
 
     
