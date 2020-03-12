@@ -21,7 +21,7 @@ namespace UIFrame
         /// </summary>
         Dictionary<string, string> AppSetting { get; }
 
-        // 方法：得到配置文件AppSetting最大的数量
+        // 方法：得到配置文件AppSetting里的数据条目数量
         int GetAppSettingMaxNumber();
 
     }
