@@ -43,6 +43,7 @@ namespace UIFrame
             {
                 lister = go.AddComponent<EventTriggerListener>();                
             }
+            Debug.LogFormat("监听到游戏对象{0}的事件注册。" , go);
             return lister;
         }
 
@@ -50,6 +51,7 @@ namespace UIFrame
         {
             if(onClick!=null)
             {
+                Debug.Log("事件操作：onClick"  );
                 onClick(gameObject);
             }
         }
@@ -58,6 +60,7 @@ namespace UIFrame
         {
             if (onDown != null)
             {
+                Debug.Log("事件操作：onDown"  );
                 onDown(gameObject);
             }
         }
@@ -66,6 +69,7 @@ namespace UIFrame
         {
             if (onEnter != null)
             {
+                Debug.Log("事件操作：onEnter"  );
                 onEnter(gameObject);
             }
         }
@@ -74,6 +78,7 @@ namespace UIFrame
         {
             if (onExit != null)
             {
+                Debug.Log("事件操作：onExit"  );
                 onExit(gameObject);
             }
         }
@@ -82,6 +87,7 @@ namespace UIFrame
         {
             if (onUp != null)
             {
+                Debug.Log("事件操作：onUp"  );
                 onUp(gameObject);
             }
         }
@@ -90,6 +96,7 @@ namespace UIFrame
         {
             if (onSelect != null)
             {
+                Debug.Log("事件操作：onSelect"  );
                 onSelect(gameObject);
             }
         }
@@ -98,6 +105,7 @@ namespace UIFrame
         {
             if (onUpdateSelect != null)
             {
+                Debug.Log("事件操作：onUpdateSelect"  );
                 onUpdateSelect(gameObject);
             }
         }

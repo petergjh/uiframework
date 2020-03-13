@@ -86,19 +86,23 @@ namespace UIFrame
             Debug.Log("5. “根UI窗体”在场景转换时不允许销毁");
             DontDestroyOnLoad(_TraCanvasTransfrom);
 
-            Debug.Log("6. 提取UI“窗体预设”路径(此处需重构做成json配置文件)\n Awake初始化完成");
+            //Debug.Log("6. 提取UI“窗体预设”路径(此处需重构做成json配置文件)\n Awake初始化完成");
+            Debug.Log("6. 提取UI“窗体预设”路径.");
             //先写简单的，后面再用json做配置文件
-            if(_DicFormsPaths!=null)
-            {
-                _DicFormsPaths.Add("LogonUIForm", @"UIPrefabs\LogonUIForm");
-                _DicFormsPaths.Add("SelectHeroUIForm", @"UIPrefabs\SelectHeroUIForm");
-                _DicFormsPaths.Add("MainCityUIForm", @"UIPrefabs\MainCityUIForm");
-                _DicFormsPaths.Add("HeroInfoUIForm", @"UIPrefabs\HeroInfoUIForm");
-                _DicFormsPaths.Add("MarketUIForm", @"UIPrefabs\MarketUIForm");
-                _DicFormsPaths.Add("HeroDetailUIForm", @"UIPrefabs\HeroDetailUIForm");
-                Debug.Log("提取窗体预设路径。");
-            }
-            
+            //            if(_DicFormsPaths!=null)
+            //            {
+            //                _DicFormsPaths.Add("LogonUIForm", @"UIPrefabs\LogonUIForm");
+            //                _DicFormsPaths.Add("SelectHeroUIForm", @"UIPrefabs\SelectHeroUIForm");
+            //                _DicFormsPaths.Add("MainCityUIForm", @"UIPrefabs\MainCityUIForm");
+            //                _DicFormsPaths.Add("HeroInfoUIForm", @"UIPrefabs\HeroInfoUIForm");
+            //                _DicFormsPaths.Add("MarketUIForm", @"UIPrefabs\MarketUIForm");
+            //                _DicFormsPaths.Add("HeroDetailUIForm", @"UIPrefabs\HeroDetailUIForm");
+            //                Debug.Log("提取窗体预设路径。");
+            //            }
+
+            LoadUIFormsPathConfigData();
+
+            Debug.Log("UI管理器Awake初始化完成");
         }
 
         // 初始化加载根UI窗体Canvas预设
@@ -119,11 +123,12 @@ namespace UIFrame
         /// </summary>
         public void ShowUIForms(string uiFormName)
         {
+            Debug.Log("新建窗体基类实例.");
             BaseUIForm baseUIForms=null;             // UI窗体基类
             // 参数检查
             if (string.IsNullOrEmpty(uiFormName)) return;
 
-            Debug.LogFormat("一、正在根据UI窗体的名称:{0}查找相应预设的路径加载到缓存集合",uiFormName);
+            Debug.LogFormat("一、开始将预设加载到窗体实例的缓存集合中");
             baseUIForms = LoadFormsToAllUIFormsCatch(uiFormName);
             if (baseUIForms == null) return;
 
@@ -163,6 +168,7 @@ namespace UIFrame
         /// <param name="uiFormName"></param>
         public void CloseUIForms(string uiFormName)
         {
+            Debug.Log("开始关闭窗体。。。");
             // 参数检查
             if (string.IsNullOrEmpty(uiFormName)) return;
 
@@ -256,6 +262,7 @@ namespace UIFrame
             if (baseUIResult == null)
             {
                 // 加载指定路径的 UI窗体
+                Debug.LogFormat("开始根据UI窗体名称:{0}查找到相应预设的路径。", uiFormsName);
                 baseUIResult = LoadUIForm(uiFormsName);
             }
             Debug.LogFormat("正在准备加载窗体：" + uiFormsName);
@@ -486,6 +493,20 @@ namespace UIFrame
             }
             return false;
 
+        }
+
+        
+        /// <summary>
+        /// 加载UI“窗体预设”路径配置数据
+        /// </summary>
+        private void LoadUIFormsPathConfigData()
+        {
+            IConfigManager configMgr = new ConfigManagerByJson("UIFormsConfigInfo");
+            if (configMgr != null)
+            {
+                _DicFormsPaths = configMgr.AppSetting;
+            }
+            Debug.Log(" 加载UI“窗体预设”路径配置数据");
         }
 
 

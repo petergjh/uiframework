@@ -37,7 +37,10 @@ namespace UIFrame
             InitAndAnalysisJson(jsonPath);
         }
 
-        // 方法：得到配置文件AppSetting里的数据条目数量
+        /// <summary>
+        /// 方法：得到配置文件AppSetting里的数据条目数量
+        /// </summary>
+        /// <returns></returns>
         public int GetAppSettingMaxNumber()
         {
             if (_AppSetting != null && _AppSetting.Count >= 1)
@@ -76,7 +79,7 @@ namespace UIFrame
             // 数据加载到APPSetting集合中
             foreach(KeyValueNode nodeInfo in keyvalueInfoObj.ConfigInfo)
             {
-                _AppSetting.Add(nodeInfo.key, nodeInfo.value);
+                _AppSetting.Add(nodeInfo.Key, nodeInfo.Value);
             }
 
            

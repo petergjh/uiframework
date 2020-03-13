@@ -77,6 +77,7 @@ namespace UIFrame
         /// <param name="delHandle">委托事件，需注册的方法</param>
         protected void RigisterButtonObjectEvent(string buttonName, EventTriggerListener.VoidDelegate delHandle)
         {
+            Debug.LogFormat("监听到按钮事件：{0}, 开始执行委托事件：{1}" , buttonName,delHandle);
             GameObject goButton = UnityHelper.FindTheChildNode(this.gameObject, buttonName).gameObject;
             Debug.Log("已查找到子节点: " + goButton);
 

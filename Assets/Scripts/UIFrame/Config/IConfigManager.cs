@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,19 +27,20 @@ namespace UIFrame
 
     }
 
-    
+    [Serializable]
     internal class KeyValuesInfo
     {
         // 配置信息（键值对集合)
         public List<KeyValueNode> ConfigInfo = null;
     }
 
+    [Serializable]
     internal class KeyValueNode
     {
         // 键
-        public string key = null;
+        public string Key = null;
         // 值
-        public string value = null;
+        public string Value = null;
     }
 
 
