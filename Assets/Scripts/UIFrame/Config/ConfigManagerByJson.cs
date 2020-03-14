@@ -32,7 +32,7 @@ namespace UIFrame
         /// <param name="jsonPath">Json配置文件路径</param>
         public ConfigManagerByJson(string jsonPath)
         {
-            Debug.Log("预设体路径信息Json配置文件开始初始化。");
+            Debug.Log("Json配置文件开始初始化。");
             _AppSetting = new Dictionary<string, string>();
 
             // 初始化解析Json数据，加载到集合中
@@ -86,7 +86,7 @@ namespace UIFrame
             // 数据加载到APPSetting集合中
             foreach(KeyValueNode nodeInfo in keyvalueInfoObj.ConfigInfo)
             {
-                Debug.Log(nodeInfo.Value + " 路径数据正在添加到配置数据列表对象 APPSetting 中");
+                Debug.Log("字典键值对：{"+nodeInfo.Key + " : " + nodeInfo.Value + "} 正在添加到配置数据列表对象 APPSetting 中");
                 _AppSetting.Add(nodeInfo.Key, nodeInfo.Value);
             }
 

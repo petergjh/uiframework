@@ -9,6 +9,8 @@ namespace DemoProject
     {
         void Start()
         {
+            Log.Write(GetType() + "/Start()/");
+
             Debug.Log("游戏开始！Welcome to my game! Have a funtime!");
             // 加载登陆窗体
             UIManager.GetInstance().ShowUIForms("LogonUIForm");

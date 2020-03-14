@@ -10,6 +10,11 @@ namespace DemoProject
     {
         public void Awake()
         {
+            Log.Write(GetType() + "/Awake()/");
+            Log.Write("立即同步日志缓存");
+            Log.SyncLogCatchToFile();
+            Debug.Log("立即同步日志缓存");
+
             Debug.Log("选择英雄窗体SelectHeroUIForm开始初始化。");
             // 窗体的性质
             // CurrentUIType.UIForms_ShowMode = UIFormShowMode.HideOther;

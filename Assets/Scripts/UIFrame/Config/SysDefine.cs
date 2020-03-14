@@ -54,6 +54,7 @@ namespace UIFrame
         // 路径常量
         public const string SYS_PATH_CANVAS = "Canvas";  // 画布预设体路径
         public const string SYS_PATH_UIFORMSCONFIGINFO = "UIFormsConfigInfo";  // 存放UI窗体预设体路径的Json配置文件的路径
+        public const string SYS_PATH_SysConfigJson = "SysConfigInfo";
 
 
         // 标签常量
