@@ -13,6 +13,7 @@ namespace UIFrame
     /// </summary>
     public class ConfigManagerByJson : IConfigManager
     {
+
         // 保存键值对应用设置集合
         private static Dictionary<string, string> _AppSetting;
 
@@ -35,6 +36,7 @@ namespace UIFrame
 
             // 初始化解析Json数据，加载到集合中
             InitAndAnalysisJson(jsonPath);
+            Debug.Log(jsonPath+"配置文件已经解析完成。");
         }
 
         /// <summary>
@@ -46,6 +48,7 @@ namespace UIFrame
             if (_AppSetting != null && _AppSetting.Count >= 1)
             {
                 return _AppSetting.Count;
+                Debug.Log("已得到Json配置文件里的数据条目数量是： " + _AppSetting.Count);
             }
             else
             {
@@ -68,7 +71,10 @@ namespace UIFrame
             try
             {
                 configInfo = Resources.Load<TextAsset>(jsonPath);
+                Debug.Log("使用 Resources.Load 方法加载配置文件");
+
                 keyvalueInfoObj = JsonUtility.FromJson<KeyValuesInfo>(configInfo.text);
+                Debug.Log("使用JsonUtility.FromJson方法把加载的Json配置文件内容还原成多组键值对组成的一个列表对象: " + keyvalueInfoObj.ConfigInfo);
             }
             catch (Exception)
             {
@@ -79,6 +85,7 @@ namespace UIFrame
             // 数据加载到APPSetting集合中
             foreach(KeyValueNode nodeInfo in keyvalueInfoObj.ConfigInfo)
             {
+                Debug.Log(nodeInfo.Value + " 路径数据已成功添加到配置数据列表对象 APPSetting 中");
                 _AppSetting.Add(nodeInfo.Key, nodeInfo.Value);
             }
 

@@ -16,6 +16,7 @@ namespace UIFrame
 {
     public interface IConfigManager
     {
+
         /// <summary>
         /// 只读属性：应用设置通用接口
         /// 接口功能：得到键值对集合数据
@@ -30,8 +31,10 @@ namespace UIFrame
     [Serializable]
     internal class KeyValuesInfo
     {
+
         // 配置信息（键值对集合)
         public List<KeyValueNode> ConfigInfo = null;
+        
     }
 
     [Serializable]

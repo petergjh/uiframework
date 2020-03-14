@@ -501,12 +501,13 @@ namespace UIFrame
         /// </summary>
         private void LoadUIFormsPathConfigData()
         {
+            Debug.LogFormat("Json配置管理器开始加载窗体预设路径配置文件: \\Resources\\UIFormsConfigInfo.json");
             IConfigManager configMgr = new ConfigManagerByJson("UIFormsConfigInfo");
             if (configMgr != null)
             {
                 _DicFormsPaths = configMgr.AppSetting;
             }
-            Debug.Log(" 加载UI“窗体预设”路径配置数据");
+            Debug.Log(" 加载UI“窗体预设”路径配置文件数据成功。");
         }
 
 
