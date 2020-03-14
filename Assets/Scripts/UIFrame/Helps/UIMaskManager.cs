@@ -35,19 +35,22 @@ namespace UIFrame
             {
                 _Instance = new GameObject("_UIMaskManager").AddComponent<UIMaskManager>();
             }
+            Debug.Log("已得到一个遮罩管理器： _UIMaskManager");
+
             return _Instance;
         }
 
         private void Awake()
         {
+            Debug.Log("遮罩管理器UIMaskManager开始初始化。");
             // 得到UI根节点对象、脚本节点对象
             _GoCanvasRoot = GameObject.FindGameObjectWithTag(SysDefine.SYS_TAG_CANVAS);
             _TraUIScriptsNode = UnityHelper.FindTheChildNode(_GoCanvasRoot, SysDefine.SYS_SCRIPTMANAGER_NODE);
-            Debug.LogFormat("获取UI根节点对象{0}、脚本节点对象{1}", _GoCanvasRoot, _TraUIScriptsNode);
+            Debug.LogFormat("获取UI根节点_CanvasRoot对象{0}、脚本节点对象{1}", _GoCanvasRoot, _TraUIScriptsNode);
 
             // 把本脚本实例，作为“脚本节点对象”的子节点
             UnityHelper.AddChildNodeToParentNode(_TraUIScriptsNode, this.gameObject.transform);
-            Debug.LogFormat("把本脚本挂到unity脚本节点上");
+            Debug.LogFormat("把遮罩管理器脚本挂到unity脚本节点上");
 
             // 得到顶层面板
             _GoTopPanel = _GoCanvasRoot;  // 确保 Canvas在unity左侧层级结构的最下方
@@ -89,7 +92,7 @@ namespace UIFrame
                     _GoMaskPanel.SetActive(true);
 
                     Debug.LogFormat("启用遮罩，遮罩窗体类型为：{0}，设置透明度为：完全透明",lucencyType);
-                    Color newColor1 = new Color(255/255F, 255/255F, 255F, 0F/255F);
+                    Color newColor1 = new Color(SysDefine.SYS_UIMASK_LUCENCY_COLOR_RGB, SysDefine.SYS_UIMASK_LUCENCY_COLOR_RGB, SysDefine.SYS_UIMASK_LUCENCY_COLOR_RGB, SysDefine.SYS_UIMASK_LUCENCY_COLOR_RGB_A);
                     Debug.LogFormat("设置颜色和透明度： "+ newColor1);
 
                     _GoMaskPanel.GetComponent<Image>().color = newColor1;
@@ -101,7 +104,7 @@ namespace UIFrame
                 case UIFormLucencyType.Translucence:
                     Debug.LogFormat("启用遮罩，遮罩窗体类型为：{0}，设置透明度为：半透明度",lucencyType);
                     _GoMaskPanel.SetActive(true);
-                    Color newColor2 = new Color(220/255F, 220/255F, 220/255F, 50/255F);
+                    Color newColor2 = new Color(SysDefine.SYS_UIMASK_TRANS_LUCENCY_COLOR_RGB , SysDefine.SYS_UIMASK_TRANS_LUCENCY_COLOR_RGB, SysDefine.SYS_UIMASK_TRANS_LUCENCY_COLOR_RGB, SysDefine.SYS_UIMASK_TRANS_LUCENCY_COLOR_RGB_A);
                     _GoMaskPanel.GetComponent<Image>().color = newColor2;
                     break;
 
@@ -109,7 +112,7 @@ namespace UIFrame
                 case UIFormLucencyType.ImPenetrable:
                     Debug.LogFormat("启用遮罩，遮罩窗体类型为：{0}，设置透明度为：低透明度",lucencyType);
                     _GoMaskPanel.SetActive(true);
-                    Color newColor3 = new Color(50/255F, 50/255F, 50/255F, 200F/255F);
+                    Color newColor3 = new Color(SysDefine.SYS_UIMASK_IMPENETRABLE_COLOR_RGB, SysDefine.SYS_UIMASK_IMPENETRABLE_COLOR_RGB, SysDefine.SYS_UIMASK_IMPENETRABLE_COLOR_RGB, SysDefine.SYS_UIMASK_IMPENTRABLE_COLOR_RGB_A);
                     _GoMaskPanel.GetComponent<Image>().color = newColor3;
                     break;
 

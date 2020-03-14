@@ -52,7 +52,8 @@ namespace UIFrame
     public class SysDefine : MonoBehaviour
     {
         // 路径常量
-        public const string SYS_PATH_CANVAS = "Canvas";
+        public const string SYS_PATH_CANVAS = "Canvas";  // 画布预设体路径
+        public const string SYS_PATH_UIFORMSCONFIGINFO = "UIFormsConfigInfo";  // 存放UI窗体预设体路径的Json配置文件的路径
 
 
         // 标签常量
@@ -63,6 +64,17 @@ namespace UIFrame
         public const string SYS_FIXED_NODE = "Fixed";
         public const string SYS_POPUP_NODE = "PopUp";
         public const string SYS_SCRIPTMANAGER_NODE = "_ScriptMgr";
+
+        //  遮罩管理器的透明度常量
+        public const float SYS_UIMASK_LUCENCY_COLOR_RGB = 255 / 255F;
+        public const float SYS_UIMASK_LUCENCY_COLOR_RGB_A = 0F / 255F;
+
+        public const float SYS_UIMASK_TRANS_LUCENCY_COLOR_RGB = 220 / 255F;
+        public const float SYS_UIMASK_TRANS_LUCENCY_COLOR_RGB_A = 50F / 255F;
+
+        public const float SYS_UIMASK_IMPENETRABLE_COLOR_RGB = 50 / 255F;
+        public const float SYS_UIMASK_IMPENTRABLE_COLOR_RGB_A = 200F / 255F;
+
 
         // 摄像机层深常量
 

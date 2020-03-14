@@ -24,7 +24,7 @@ namespace UIFrame
             searchTrans = goParent.transform.Find(childName);
             if (searchTrans==null)
             {
-                Debug.Log("开始递归查找子节点: "+childName);
+                Debug.Log("通用方法：开始递归查找子节点: "+childName);
                 foreach(Transform trans in goParent.transform)
                 {
                     searchTrans = FindTheChildNode(trans.gameObject, childName);
@@ -51,7 +51,7 @@ namespace UIFrame
             searchTransformNode = FindTheChildNode(goParent, childName);
             if(searchTransformNode != null)
             {
-                Debug.Log(" 查找并返回子节点脚本：" + childName);
+                Debug.Log(" 通用方法：查找并返回子节点脚本：" + childName);
                 return searchTransformNode.gameObject.GetComponent<T>();
             }
             else
@@ -70,6 +70,7 @@ namespace UIFrame
         /// <returns></returns>
         public static T AddChildNodeComponent<T>(GameObject goParent, string childName) where T:Component
         {
+            Debug.Log("通用方法：查找子节点并添加脚本。");
             Transform searchTransform = null;  // 查找特定节点结果
 
             //  查找特定子节点
@@ -105,6 +106,7 @@ namespace UIFrame
         /// <param name="child">子对象的方法</param>
         public static void AddChildNodeToParentNode(Transform parents, Transform child)
         {
+            Debug.Log("通用方法：给子节点添加父对象");
             child.SetParent(parents, false);
             child.localPosition = Vector3.zero;
             child.localScale = Vector3.one;

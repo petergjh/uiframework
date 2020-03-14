@@ -13,6 +13,7 @@ namespace DemoProject
     {
         private void Awake()
         {
+            Debug.Log("英雄头像窗体HeroInfoUIForm开始初始化");
 
             // 定义窗体性质 
             CurrentUIType.UIForms_Type = UIFormType.Fixed;  // 把此窗体挂到相应unity的父节点上显示

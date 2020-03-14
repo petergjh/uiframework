@@ -10,6 +10,7 @@ namespace DemoProject
     {
         public void Awake()
         {
+            Debug.Log("选择英雄窗体SelectHeroUIForm开始初始化。");
             // 窗体的性质
             // CurrentUIType.UIForms_ShowMode = UIFormShowMode.HideOther;
             Debug.Log("显示当前窗体时隐藏其它窗体,减少不必要加载的性能消耗");

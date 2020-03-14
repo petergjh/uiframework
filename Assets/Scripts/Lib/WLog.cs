@@ -24,7 +24,7 @@ public class WLog : MonoBehaviour
     {
         date = TimeToString();
         Application.logMessageReceivedThreaded += CaptureLogThread;
-        Debug.Log("Log begin.");
+        Debug.Log("日志Log管理器初始化完成。");
     }
 
     private void CaptureLogThread(string condition, string stackTrace, LogType type)

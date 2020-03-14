@@ -55,7 +55,7 @@ namespace UIFrame
         /// </summary>
         public void Awake()
         {
-            Debug.Log("开始执行Awake方法，设置核心数据默认值:路径、所有窗体、正在显示的窗体，并提取“UI窗体路径”到集合中");
+            Debug.Log("UI管理器开始初始化。开始设置核心数据默认值:路径、所有窗体、正在显示的窗体，并提取“UI窗体路径”到集合中");
             // 字段初始化
             _DicFormsPaths = new Dictionary<string, string>();
             _DicAllUIForms = new Dictionary<string, BaseUIForm>();
@@ -147,15 +147,15 @@ namespace UIFrame
                 case UIFormShowMode.Normal:          // 普通显示窗口模式
                     // 把当前窗体加载到“当前窗体”集合中
                     LoadUIToCurrentCache(uiFormName);
-                    Debug.LogFormat("当前窗体:{0}已加载到“正在显示”集合中, 窗体显示成功。", uiFormName);
+                    Debug.LogFormat("当前窗体:{0}已加载到“正在显示”集合中, 窗体已成功显示。", uiFormName);
                     break;
                 case UIFormShowMode.ReverseChange:   // 需要反向切换窗口模式
                     PushUIFormToStack(uiFormName);
-                    Debug.Log("当前反向切换窗体已加载到“正在显示”集合中");
+                    Debug.LogFormat("当前反向切换窗体{0}已加载到“正在显示”集合中, 窗体已成功显示。", uiFormName);
                     break;
                 case UIFormShowMode.HideOther:       // 隐藏其它窗口模式
                     EnterUIFormsAndHideOther(uiFormName);
-                    Debug.Log("隐藏其它窗口");
+                    Debug.LogFormat("显示当前窗体{0},同时隐藏其它窗体。",uiFormName);
                     break;
                 default:
                     break;
@@ -168,7 +168,7 @@ namespace UIFrame
         /// <param name="uiFormName"></param>
         public void CloseUIForms(string uiFormName)
         {
-            Debug.Log("开始关闭窗体。。。");
+            Debug.Log("开始关闭窗体: "+uiFormName);
             // 参数检查
             if (string.IsNullOrEmpty(uiFormName)) return;
 
@@ -502,7 +502,7 @@ namespace UIFrame
         private void LoadUIFormsPathConfigData()
         {
             Debug.LogFormat("Json配置管理器开始加载窗体预设路径配置文件: \\Resources\\UIFormsConfigInfo.json");
-            IConfigManager configMgr = new ConfigManagerByJson("UIFormsConfigInfo");
+            IConfigManager configMgr = new ConfigManagerByJson(SysDefine.SYS_PATH_UIFORMSCONFIGINFO);
             if (configMgr != null)
             {
                 _DicFormsPaths = configMgr.AppSetting;

@@ -43,7 +43,7 @@ namespace UIFrame
             {
                 lister = go.AddComponent<EventTriggerListener>();                
             }
-            Debug.LogFormat("监听到游戏对象{0}的事件注册。" , go);
+            Debug.LogFormat("游戏对象{0}完成监听事件的注册。" , go);
             return lister;
         }
 

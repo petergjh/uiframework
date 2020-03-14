@@ -10,6 +10,7 @@ namespace DemoProject
     {
         public void Awake()
         {
+            Debug.Log("游戏登录窗体LogonUIForm开始初始化");
             // 定义本窗体的性质
             base.CurrentUIType.UIForms_Type = UIFormType.Normal;
             base.CurrentUIType.UIForms_ShowMode = UIFormShowMode.Normal;

@@ -10,6 +10,7 @@ namespace DemoProject
     {
         private void Awake()
         {
+            Debug.Log("英雄详情窗体HeroDetailUIForm开始初始化");
             // 窗体类型
             CurrentUIType.UIForms_ShowMode = UIFormShowMode.ReverseChange;
             CurrentUIType.UIForms_Type = UIFormType.PopUP;

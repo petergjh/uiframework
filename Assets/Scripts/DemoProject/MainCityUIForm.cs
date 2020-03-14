@@ -8,8 +8,10 @@ namespace DemoProject
 
     public class MainCityUIForm : BaseUIForm
     {
+        
         private void Awake()
         {
+            Debug.Log("主城窗体MainCityUIForm开始初始化");
             // 窗体性质使用默认值
             //CurrentUIType.UIForms_ShowMode = UIFormShowMode.HideOther;
 
