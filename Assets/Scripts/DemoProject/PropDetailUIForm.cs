@@ -61,9 +61,12 @@ namespace DemoProject
                 {
                     if (TxtName)
                     {
-                        TxtName.text = p.Values.ToString();
+                        // TxtName.text = p.Values.ToString();
+                        string[] strArray = p.Values as string[];
+                        TxtName.text = strArray[0];
+                        print("测试传递消息的值可以是不同的类型对象： " + strArray);
                     }
-                    Debug.Log("已接收到消息：" + p.Key + p.Values);
+                    Debug.Log("监听并接收消息：" + p.Key + p.Values);
                 });
 
         } // Awake_end

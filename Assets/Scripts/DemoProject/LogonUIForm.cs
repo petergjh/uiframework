@@ -42,7 +42,7 @@ namespace DemoProject
             //  如果成功，切换下一个窗体
             //UIManager.GetInstance().ShowUIForms("SelectHeroUIForm");
             //OpenUIForm("SelectHeroUIForm");
-            OpenUIForm(ProConst.SELECT_HERO_FORM);
+            OpenUIForm(ProjectConst.SELECT_HERO_FORM);
         }
 
     }
