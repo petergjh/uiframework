@@ -22,6 +22,45 @@ namespace DemoProject
                 p=> CloseUIForm()
                 );
 
+            // 注册道具事件：神杖
+            RigisterButtonObjectEvent("BtnTicket",
+                p =>
+                {
+                    // 打开子窗体
+                    OpenUIForm("PropDetailUIForm");
+                    // 传值
+                    // KeyValueUpdate kvs = new KeyValueUpdate("ticket", "神杖道具详情:");
+                    // MessageCenter.SendMessage("Props", kvs);
+                    // 发送方法进行了封装重构
+                    SendMessage("Props","ticket", "神杖道具详情:");
+                }
+                );
+
+            // 注册道具事件：战靴
+            RigisterButtonObjectEvent("BtnShoe",
+                 p =>
+                {
+                    // 打开子窗体
+                    OpenUIForm("PropDetailUIForm");
+                    // 传值
+                    KeyValueUpdate kvs = new KeyValueUpdate("shoes", "战靴道具详情:");
+                    MessageCenter.SendMessage("Props", kvs);
+                }
+                );
+
+            // 注册道具事件：盔甲
+            RigisterButtonObjectEvent("BtnCloth",
+                 p =>
+                {
+                    // 打开子窗体
+                    OpenUIForm("PropDetailUIForm");
+                    // 传值
+                    KeyValueUpdate kvs = new KeyValueUpdate("cloth", "盔甲道具详情:");
+                    MessageCenter.SendMessage("Props", kvs);
+                }
+                );
+
+
         }
 
     }

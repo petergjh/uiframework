@@ -89,7 +89,10 @@ namespace UIFrame
             }
         }
 
-        // 打开UI窗体
+        /// <summary>
+        /// 打开UI窗体
+        /// </summary>
+        /// <param name="uiFormName"></param>
         protected void OpenUIForm(string uiFormName)
         {
             UIManager.GetInstance().ShowUIForms(uiFormName);
@@ -115,6 +118,34 @@ namespace UIFrame
             }
 
             UIManager.GetInstance().CloseUIForms(strUIFormName);
+        }
+
+        /// <summary>
+        /// 发送消息的方法
+        /// </summary>
+        /// <param name="msgType">消息类型</param>
+        /// <param name="msgName">消息名称</param>
+        /// <param name="msgContent">消息内容</param>
+        protected void SendMessage(string msgType,string msgName, object msgContent)
+        {
+            Debug.Log("正在发送消息:" + msgType+ msgName+ msgContent);
+            // 消息的内容
+            KeyValueUpdate kvs = new KeyValueUpdate(msgName,msgContent);
+
+            // 发送消息的类型
+            MessageCenter.SendMessage(msgType, kvs);
+
+
+        }
+
+        /// <summary>
+        // 接收消息的方法也可以封装
+        /// </summary>
+        /// <param name="messageType">消息分类</param>
+        /// <param name="handler">消息委托</param>
+        public void ReceiveMessage(string messageType, MessageCenter.DelegateMessageDelivery handler)
+        {
+            MessageCenter.AddMsgListener(messageType, handler);
         }
 
 

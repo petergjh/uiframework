@@ -20,7 +20,9 @@
 "Value":"UIPrefabs\\MarketUIForm"},
 
 {"Key":"HeroDetailUIForm",
-"Value":"UIPrefabs\\HeroDetailUIForm"}
+"Value":"UIPrefabs\\HeroDetailUIForm"},
 
+{"Key":"PropDetailUIForm",
+"Value":"UIPrefabs\\PropDetailUIForm"}
 ]
 }
